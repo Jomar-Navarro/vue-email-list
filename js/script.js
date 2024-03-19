@@ -7,27 +7,35 @@ createApp({
   data(){
 
     return {
-      title: 'Email list',
+      title: 'Email list generator',
       apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
-      addEmail: '',
+      emailList: [],
     }
 
   },
 
   methods: {
+
     getApi(){
       axios.get(this.apiUrl)
       .then ( (risposta) => {
-        console.log(this.addEmail = risposta.data.response);
+        this.emailList.push(risposta.data.response);
       })
 
       .catch((error) => {
-        console.log();
+        console.log(error);
       })
-    }
+    },
+
+  },
+
+  created(){
+      for (let i = 1; i < 10; i++) {
+        this.getApi()
+      }
   },
 
   mounted(){
-    this.getApi()
+    this.getApi();
   },
 }).mount('#app')
