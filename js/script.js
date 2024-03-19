@@ -10,7 +10,6 @@ createApp({
       title: 'Email list generator',
       apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
       emailList: [],
-      result: '',
     }
 
   },
