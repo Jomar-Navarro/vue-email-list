@@ -23,7 +23,11 @@
   <div id="app">
     <div class="container my-5">
       <h1 class="output text-center text-white">{{ title }}</h1>
-      <h2 class="output text-center text-success">{{ emailList }}</h2>
+      <strong class="fs-3">
+        <ol class="text-success">
+          <li v-for="(email, index) in emailList">{{ email }}</li>
+        </ol>
+      </strong>
     </div>
   </div>
 
